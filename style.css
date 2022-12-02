@@ -1,0 +1,1290 @@
+h1{ 
+    font-size:70px; 
+} 
+
+*{ 
+    padding:0; 
+    margin:0; 
+    text-decoration: none; 
+    list-style: none; 
+    box-sizing: border-box; 
+} 
+
+
+html{
+    scroll-behavior: smooth;
+}
+body{ 
+    font-family:'Poppins', sans-serif ;
+    background: rgba(37,54,69); 
+    background:black;
+} 
+
+
+/*------------ FELLES KODE----------- */
+.line-res{
+    width:60%;
+    height:1px;
+    background:rgb(214, 173, 95);
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:5%;
+}
+
+/*----- NAVIGASJONS BAR----- */
+.reservasjon a{
+    text-decoration: none;
+    color:white;
+    font-size:17px;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(139, 90, 0);
+    color: #ffffff;
+    text-decoration: none;
+    padding:10px 20px;
+    cursor:pointer;
+}
+.reservasjon a:hover{
+    background:white;
+    color:black;
+    border: 1px solid black;
+    transition: 0.4s;
+}
+nav ul li{ 
+    list-style:none; 
+    display:inline-block; 
+    margin-right:50px; 
+} 
+nav ul li a{ 
+    text-decoration:none; 
+    color:rgb(21, 20, 20); 
+    font-size :18px; 
+    padding:10px 50px; 
+    border-radius: 50px; 
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 900;
+}  
+nav ul li a:hover{ 
+    background-color:transparent;
+    color:#f8ae2d;
+    cursor:pointer;
+    transition: .4s;
+} 
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+.align-items-center{
+	align-items: center;
+}
+.justify-content-between{
+	justify-content: space-between;
+}
+/* HEADER */
+.header{
+    background-color: rgb(30, 46, 59); 
+    background-color: black;;
+	padding:12px 0;
+	position: relative;
+}
+
+.header .nav{
+	padding:0 15px;
+    margin-right: auto;
+    margin-left:auto;
+}
+
+.header .logo a{
+	font-size: 30px;
+	color: #ffffff;
+	text-transform: capitalize;
+    margin-left:40px;
+    font-weight:lighter;
+}
+
+.header .nav ul li{
+	display: inline-block;
+}
+.header .nav ul li a{
+	display: block;
+	font-size: 16px;
+	color: white;
+	text-transform: capitalize;
+	transition: all 0.5s ease;
+    position: relative;
+    border-radius:0px;
+    padding-right:10px;
+    padding-left:10px;
+    font-weight:lighter;
+
+
+}
+.header .nav ul .reservasjon-responsive{
+    display:none;
+}
+.reservasjon a{
+    margin-right:30px;
+    font-size:18px;
+}
+.header .nav ul li a:hover{
+	color: #ddb861;
+}
+.header #nav-check{
+	position: absolute;
+	opacity:0;
+	pointer-events: none;
+}
+.nav-toggler{
+	height: 34px;
+	width: 44px;
+	cursor: pointer;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	margin-right: 15px;
+}
+.nav-toggler span{
+	display: block;
+	height: 2px;
+	width: 20px;
+	position: relative;
+    background:white;
+}
+
+.nav-toggler span::before,
+.nav-toggler span::after{
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background-color: white;
+   left:0;
+}
+.nav-toggler span::before{
+	top: -6px;
+}
+.nav-toggler span::after{
+	top: 6px;
+}
+.container{
+	width:100%;
+	margin: auto;
+    font-family: 'Poppins', sans-serif;
+}
+/*-------- SLUTT PÅ NAVIGASJONS BAR ---------*/ 
+
+
+/* CONTAINER FOR HOVEDBILDE MED TEKST I BEGYNNELSE AV HVER SIDE*/
+.container-sidestart {
+    position: relative; 
+    height: 700px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*background: linear-gradient(70deg, rgba(0, 0, 255, 0.288), rgba(255, 192, 203, 0.466));*/
+    background-size: cover;
+}
+
+.container-sidestart::before{
+    content: "";
+    background-size: cover;
+    position: absolute;
+    background-color:rgb(0,0,0.6);
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-repeat: no-repeat;
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+}
+
+.container-sidestart  h1{
+    width:auto;
+    margin-left:10%;
+    font-size:80px;
+}
+.container-sidestart p{
+    width:60%;
+    margin-left:10%;
+    font-weight:lighter;
+    
+}
+.overskrift-under p{
+    font-weight:lighter;
+}
+/* ---VIDEO BAKGRUNN-- */
+.videoPlayer {
+    height: 700px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.container-sidestart .videoPlayer .overskrift{
+    margin-top:200px;
+}
+.videoPlayer video {
+    min-width: 100%;
+    min-height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity:0.3;
+    object-fit: center;
+}
+/*--- SLUTT PÅ VIDEO BAKGRUNN---*/
+
+
+.navbar-reservasjon{
+    display:none;
+}
+
+/* --- CSS-KODE FOR BILDER MED TEKST VED SIDEN AV---  */
+.container3{
+    width:100%;
+    
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    margin-top:100px;
+    
+}
+.left{
+    width:100%;
+    height:600px;
+    background:url(./reservationbilde.jpeg) no-repeat center / cover;
+    border-radius:8px;
+    margin-left:5%;
+    margin-right:5%;
+}
+.bord-book{
+    background:url(./book-bord-bilde.jpeg)no-repeat center / cover;
+    width:800px;
+}
+.right{
+    width:80%;
+    min-height:500px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding:30px;
+    border-radius:8px;
+    color:white;
+    font-family:'Poppins', sans-serif;
+    margin-left:10%;
+}
+
+.right h1{
+    font-size:40px;
+    font-weight: lighter;
+}
+.right p{
+    margin:20px 0;
+    font-weight: 500;
+    line-height: 25px;
+}
+.right a{
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color:rgb(231, 200, 132);
+    color:black;
+    margin-top:50px;
+    padding: 13px 36px;
+    display: inline-block;
+    letter-spacing: 2px;
+    border-radius: 100px;
+}
+
+/* H4 OG H5*/
+h4{ 
+    padding:0;
+    margin:10px 0 10px 15px;
+    font-size:13;
+    font-weight:bold;
+    color:#e6540c;
+}
+
+h5{ 
+    padding:0;
+    margin:10px 0 10px 15px;
+    font-size:16;
+    font-weight:400;
+    text-transform:uppercase;
+    color:rgb(230,230,230);
+}
+
+/*  LINJER SOM ER LAGT TIL RUNDT OM PÅ SIDEN FOR STRUKTUR*/ 
+.btn:hover{
+    background:black;
+    color:orange;
+    transition: .4s;
+    border: 1px solid;
+}
+
+.strek2{
+    margin-top:700px;
+    height:2px;
+    width:1000px;
+    position:absolute;
+    background-color: rgb(255, 173, 42);
+}
+.res-strek{
+    width:50%;
+    margin-top:5%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* --------------- SLUTT PÅ FELLES KODE ------------ */
+
+
+/* -----------INDEX.HTML CSS CODE----------*/
+
+.hjem{
+    position: relative; 
+    height: 700px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(70deg, rgba(0, 0, 255, 0.288), rgba(255, 192, 203, 0.466));
+    background-size: cover;
+}
+.hjem::before{
+    background:
+    linear-gradient(
+          rgba(0, 0, 0, 0.7), 
+          rgba(0, 0, 0, 0.7)
+    ),
+    url(./wallpaper1.jpeg); 
+    content: "";
+    background-size: cover;
+    position: absolute;
+    background-color:rgb(0,0,0.6);
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-repeat: no-repeat;
+    filter: blur(1px);
+    -webkit-filter: blur(1px);
+    background-attachment: FIXED;
+}
+.container-sidestart .overskrift{
+    margin-top:30px;
+    width:100%;
+}
+
+.overskrift{
+    margin-top:200px;
+}
+
+.overskrift h1 {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    color: rgb(255, 255, 255);  
+    font-size: 60px;
+    font-weight: light;
+    line-height: 0.9;
+    text-align: left;
+    font-weight:lighter;
+
+}
+.overskrift p{
+    font-size:25px;
+    text-align:left;
+    color:rgb(255, 255, 255);
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-weight:bolder;
+    font-style:italic;
+    top:50px;
+    font-weight:lighter;
+
+}
+
+.container-velkommen{
+    width:100%;
+    margin:0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:100px;
+    
+}
+.velkommen-left{
+    width:100%;
+    height:600px;
+    background:url(./velkommen-bilde.webp) no-repeat center / cover;
+    border-radius:8px;
+    margin-right:40px;
+}
+.velkommen-right{
+    width:80%;
+    min-height:500px;
+    margin-left:10%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding:30px;
+    border-radius:8px;
+    color:white;
+    margin-left:0px;
+    font-family:'Poppins', sans-serif;
+    
+}
+.velkommen-right h1{
+    font-size:40px;
+    font-weight: lighter;
+    margin-bottom:10%;
+}
+.velkommen-right p{
+        margin-right:10%;
+        font-weight: 500;
+        line-height: 25px;
+}
+.velkommen-right a{
+        text-decoration: none;
+        text-transform: uppercase;
+        background-color:rgb(231, 200, 132);
+        color:black;
+        margin-top:50px;
+        padding: 13px 36px;
+        display: inline-block;
+        letter-spacing: 2px;
+        border-radius: 100px;
+}
+
+.services{
+        margin-top:50px;
+    
+        width:100%;
+        padding: 100px 0px;
+}
+.title h2{
+        color:black;
+        font-size: 75px;
+        width:1130px;
+        margin: 30px auto;
+        text-align: center;
+        font-family: cursive; 
+}
+.box{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 400px;
+}
+.card{
+        height: 490px;
+        width:500px;
+        padding:20px 35px;
+        border-radius: 20px;
+        margin:15px;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        background-color: rgb(18, 18, 19);
+        
+}
+
+h5{
+        color:rgb(244, 181, 86);
+        font-size:23px;
+        margin-bottom: 15px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: lighter;
+        letter-spacing: 2px;
+        ;
+}
+.pra p{
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    line-height:27px;
+    margin-bottom: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: light;
+}
+
+.card .button{
+        background-color: rgba(0, 0, 0, 0.561);
+        color:white;
+        text-decoration: none;
+        border: 1px solid white;
+        font-weight:lighter;
+        padding:13px 40px;
+        font-style:'Poppins', sans-serif;
+        transition: .4s;
+    
+}
+.card .button:hover{
+        background-color: transparent;
+        border:2px solid #f9004d;
+        cursor:pointer;
+}
+.menybilde{
+        width:200px;
+        margin-left:auto;
+        margin-right:auto;
+        padding-bottom: 20px;
+}
+.menybilde-menyside{
+        width:100%;
+        height:300px;
+        object-fit: cover;
+        margin-left:auto;
+        margin-right:auto;
+        padding-bottom: 20px;
+}
+.reservasjonbilde{
+        width:200px;
+        padding-bottom: 20px;
+}
+.omossbilde{
+        width:200px;
+        padding-bottom: 10px;
+}
+    /*-------------SLUTT PÅ INDEX.HTML--------------*/
+
+
+
+/* -------------MENY.HTML SIDE-------------*/
+.meny::before {
+    background:
+    linear-gradient(
+        rgba(0, 0, 0, 0.7), 
+        rgba(0, 0, 0, 0.7)
+    ),
+    url(./reservasjonside.jpeg); 
+}
+
+.meny-overtekst{
+    color:white;
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align:center;
+    font-family:'Poppins', sans-serif;
+    margin-top:50px;
+    margin-bottom:-100px;
+ 
+}
+.meny-overtekst h2{
+    font-weight:lighter;
+    font-size:40px;
+}
+.p-meny p{
+    color: white;
+    font-size: 20px;
+    line-height:27px;
+    margin-bottom: 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+}
+.box-meny{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+
+}
+.card-meny{
+    height: 800px;
+    width:100%;
+    padding:20px 35px;
+    border-radius: 20px;
+    margin:15px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border:1px solid rgb(111, 64, 2);
+}
+.menybilde-menyside{
+    width:100%;
+    height:300px;
+    object-fit: cover;
+    margin-left:auto;
+    margin-right:auto;
+    padding-bottom: 20px;
+}
+.button-meny{
+   
+    border: 1px solid white;
+    color:white;
+    text-decoration: none;
+    font-weight:lighter;
+    padding:10px 40px;
+    font-style:'Poppins', sans-serif;
+    transition: .4s;
+    bottom:0;
+    margin-top:100px;
+    background:#111111d1;
+}
+.card-meny .button-meny:hover{
+    text-decoration: none;
+    background-color: rgb(146, 162, 175); 
+    border:none;
+    cursor:pointer;
+}
+.card-meny h2{
+    color:white;
+ 
+}
+
+
+/*---------------- SLUTT PÅ MENY SIDE------------*/
+
+
+
+/* ----------RESERVATION.HTML SIDE ---------*/
+.overskrift{
+    margin-top:200px;
+}
+.overskrift h2 {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    color: rgb(255, 255, 255);  
+    font-size: 60px;
+    font-weight: light;
+    line-height: 0.9;
+    text-align: left;
+
+}
+.overskrift p{
+    font-size:25px;
+    text-align:left;
+    color:rgb(255, 255, 255);
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-weight:bolder;
+    font-style:italic;
+    top:50px;
+}
+a.knapp{
+    position:relative;
+    display:inline-block;
+    padding:15px 25px;
+    margin-top:90px;
+    margin-left:10%;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+    transform: skew(-10deg);
+}
+a.event{
+    margin-left:1%;
+    border:1px solid white;
+    background: transparent;
+}
+a.bord{
+    background:rgb(147, 96, 0);
+    border: 1px solid none;
+}
+a.knapp:hover{
+    background:white;
+    color:black;
+}
+.container3{
+    width:100%;
+    
+    margin:0 auto;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    margin-top:100px;
+    
+}
+.container3 .book{
+    text-align:center;
+    width:100%;
+}
+.bord-booking-section{
+    height: auto;
+    background:url("banner-img.jpg") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding-bottom: 20px;
+    margin-top:30px;
+}
+.bord-booking{
+    display: grid;
+    grid-template-columns: 420px 420px;
+    height: 500px;
+    
+
+}
+.bord-booking-img{
+    background: url("./book-bord-bilde.jpeg") center/cover no-repeat;
+}
+.bord-booking-section h2{
+    padding-bottom: 40px;
+    margin-bottom: 20px;
+    margin-top:5%;
+    font-family: 'Poppins', sans-serif;
+}
+.bord-booking-content{
+    background: rgb(20, 30, 39);
+    height: 500px;
+ 
+}
+.bord-booking-content h3{
+    text-align: center;
+    color: white;
+    padding: 25px 0 10px 0;
+    font-size: 26px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+.form-row-bord-booking{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+form select, form input{
+    display: block;
+    width: 100%;
+    margin: 15px 12px;
+    padding: 5px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgba(37,54,69);
+    font-weight: 300;
+    background:rgb(20, 30, 39);
+}
+form input[type = text], form input[type = number], form input::placeholder, select{
+    color: white;
+}
+form input[type = submit]{
+    color: white;
+    background: #d87307;
+    padding: 12px 0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight:light;
+}
+form input[type = submit]:hover{
+    opacity: 0.9;
+}
+.lokasjon iframe{
+    
+    width:100%;
+    margin-top:2%;
+    
+}
+.lokasjon h2{
+    color:white;
+    font-family: 'Poppins', sans-serif;
+    text-align:center;
+    margin-top:5%;
+}
+/*-------------- SLUTT PÅ RESERVATION.HTML -----------SIDE*/
+
+
+/* ------------EVENT.HTML SIDE------------- */
+
+.event::before{
+    background:
+    linear-gradient(
+        rgba(0, 0, 0, 0.7), 
+        rgba(0, 0, 0, 0.7)
+    ),
+    url(./reservasjonside.jpeg); 
+}
+.tilbake-reservasjon a{
+    text-decoration: none;
+    color:white;
+    margin-left:3%;
+    font-family: 'Poppins', sans-serif;
+
+    letter-spacing: 4px;
+}
+.tilbake-reservasjon{
+    margin-top:3%;
+}
+.bryllup{
+    background:url(./bryllup.jpeg) no-repeat center/cover;
+}
+.mai17{
+    background:url(./17.mai.jpeg) no-repeat center/cover;
+}
+.heading-event{
+    font-size:40px;
+    color:white;
+    font-weight:lighter;
+    text-align:center;
+    margin-top:20px;
+}
+/* ----------SLUTT PÅ EVENT.HTML ------------*/
+
+
+
+/* ------------- TEKNOLOGI OG SAMFUNN SIDE -----------*/
+
+.ovdata{
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    margin-top: 4%;
+    margin-bottom: 0%;
+    font-family:'Poppins', sans-serif ;
+}
+.velkommen-content p{
+    font-size:20px;
+    line-height: 40px;;
+    font-weight:lighter;
+
+}
+.velkommen-content h2{
+    font-size:50px;
+    margin-bottom:20px;
+    font-weight:lighter;
+
+}
+.dataleft{
+    border: 1px solid beige;
+    padding: 10px;
+}
+.velkommen-left3{
+    width:100%;
+    height:700px;
+    background:url(telefon2.jpeg) no-repeat center / cover;
+    border-radius:8px;
+    margin-right:40px;
+}
+.skrivefelt2{
+    
+    margin-bottom: 5%;
+    width: 60%;
+    text-align: left;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    color:white;
+    margin-top: 2%;
+    margin-bottom: 2%; 
+    letter-spacing: 2px;
+    line-height: 2;
+    font-size: 26px;
+    font-family:'Poppins', sans-serif ;
+}
+.skrivefelt2::first-letter{
+    font-size: 35px;
+    color:beige;
+}
+.databak{
+    background-color: hsla(0, 0%, 0%, 0.634);
+    color: white;
+    width: 80%;
+    height: 30%;
+    border: 1px solid white;
+    border-radius: 10px 15px;
+    padding: 15px;
+}
+.paralax1{
+    position:relative;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+    height:500px;
+}
+.paralax1::before{
+    content: " ";
+    width: 100%;
+    background:
+    linear-gradient(
+          rgba(0, 0, 0, 0.7), 
+          rgba(0, 0, 0, 0.7)
+    ),
+    url(./mobil.jpeg); 
+    background-size:cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.4;
+    position: absolute;
+    background-attachment: fixed; 
+    overflow: hidden;
+    -moz-background-size: cover; 
+    -webkit-background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position:center;
+}
+.bildeh2{
+    position: relative;
+    font-size: 40px;
+    font-weight:normal;
+    color: white;
+    line-height: 60px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+    margin: 10px;
+    font-weight: bolder;
+    width:70%;
+
+}
+
+.skrivefelt{
+    width: 80%;
+    text-align: left;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    color:white;
+    margin-top: 2%;
+    margin-bottom: 2%; 
+    letter-spacing: 2px;
+    line-height: 1.8;
+    font-size: 25px;
+    font-family:'Poppins', sans-serif ;
+}
+
+.paralax2{
+    position:relative;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+    height:500px;
+    margin-top: 2%;
+}
+.paralax2::before{
+    content: " ";
+    width: 100%;
+    background-size:cover;
+    position: absolute;
+    background:
+    linear-gradient(
+          rgba(0, 0, 0, 0.7), 
+          rgba(0, 0, 0, 0.7)
+    ),
+    url(./internett.jpeg); 
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.4;
+    background-attachment: fixed; 
+    overflow: hidden;
+    -moz-background-size: cover; 
+    -webkit-background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position:center;
+}
+.tekstmedborder{
+border-bottom: 1px solid beige;
+margin-top: 2%;
+}
+.linker{
+    text-align: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.dataknapp{
+    border: 1px solid black;
+    border-radius: 6px 9px;
+    margin: 5px;
+    font-size: 18px;
+    font-family:'Poppins', sans-serif ;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+    color: black;
+    margin: bottom 3%; 
+    background-color: orange;
+    padding: 5px;
+}
+.dataknapp:hover{
+    background:black;
+    color:orange;
+    transition: .4s;
+    border: 1px solid;
+}
+.velkommen-left2{
+    width:100%;
+    height:900px;
+    background:url(innovasjon.png) no-repeat center / cover;
+    border-radius:8px;
+    margin-right:40px;
+}
+
+
+/* SLUTT PÅ TEKNOLOGI OG SAMFUNN SIDE */
+
+/*-----------ACCESSIBILITY SIDE---------*/
+
+.accessibility::before{
+    background:
+    linear-gradient(
+        rgba(0, 0, 0, 0.8), 
+        rgba(0, 0, 0, 0.8)
+    ),
+    url(./accessibility.webp) ;
+    background-size: cover;
+    width:100%;
+}
+ .accessibility-bakgrunn{
+    background:rgba(15, 16, 29, 0.658);
+    width:85%;
+    margin:0 auto;
+    padding:20px;
+    padding-top: 25px;
+ }
+ 
+ .accessibility-content{
+    color:white;
+    width:80%;
+    margin: 0 auto;
+    margin-top:50px;
+    font-size:25px;
+    margin-bottom:100px;
+    background:rgb(15, 16, 29);
+    padding:80px;
+    line-height:60px;
+    border-radius:30px;
+ }
+ .første-paragraf{
+    color:white;
+    text-align:center;
+    font-size:25px;
+    width:90%;
+    margin: 0 auto;
+    margin-top:20px;
+
+ }
+
+@media (max-width:1180px){ 
+
+
+    
+
+
+    .header .nav ul .reservasjon-responsive{
+        display:flex;
+    }
+
+
+.services{
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    justify-content: center;
+}
+
+.box {
+    flex-direction: column;
+}
+.card{
+    width:90%;
+}
+.velkommen{
+    font-size:20px;
+}
+
+
+.reservasjon{
+    display:none;
+}
+
+.booking-container{
+    grid-template-columns: 100%;
+}
+.booking::before{
+    object-fit: cover;
+}
+.booking{
+    flex-direction: column;
+}
+
+.overskrift h1{
+    font-size: 45px;
+}
+.overskrift p{
+    font-size:20px;
+    font-weight: lighter;
+}
+
+.container{
+    object-fit: cover;
+}
+.container3::before{
+    object-fit: cover;
+}
+.container3{
+    flex-direction: column;
+    display: flex;
+}
+.left{
+    width:100%;
+    border-radius: 0;
+}
+.right{
+    width:100%;
+    margin:0;
+  
+    background:rgb(19, 19, 19);
+    border-radius: 0px;;
+}
+.brylluptxt{
+   flex-direction: column-reverse;
+
+}
+.bryllup{
+    height:300px;
+}
+.mai17{
+    height: 300px;
+}
+.bord-booking-section h2{
+    text-align:center;
+    font-weight:lighter;
+}
+.bord-booking{
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 90%;
+    width: 100%;
+    height:100%;
+}
+
+  .strek{
+    display:none;
+  }
+
+.bord-booking-img{
+    height: 200px;
+    margin-top:-200px;
+}
+a.event{
+margin-top: 20%; 
+}
+a.knapp{
+    margin-top:15%;
+}
+.logo2{
+    margin-left:auto;
+    margin-right:auto;
+}
+.velkomst-text p{
+    width:90%;
+}
+    .nav-toggler{
+    	display: flex;
+    }
+    .header .nav{
+    	position: absolute;
+    	left: 0;
+    	top:100%;
+    	width: 100%;
+    	opacity:0;
+    	visibility: hidden;
+    }
+    .header .nav ul li{
+    	display: block;
+    	margin:0;
+    }
+    .header #nav-check:checked ~ .nav{
+       opacity: 1;
+       visibility: visible;
+       position: relative;
+    }
+    .nav-toggler{
+    	display: flex;
+    }
+    .header .nav{
+    	position: absolute;
+    	margin: 0 auto;
+    	top:100%;
+    	width: 100%;
+    	opacity:0;
+    	visibility: hidden;
+    }
+    .header .nav ul li{
+    	display: block;
+    	margin:0;
+    }
+    .header #nav-check:checked ~ .nav{
+       opacity: 1;
+       visibility: visible;
+       background:rgb(9, 9, 9); 
+       position: relative;
+    }
+    .box-meny {
+        flex-direction: column;
+    }
+    .card-meny{
+        justify-content: center;
+    align-items: center;
+    grid-template-columns: 90%;
+    width: 100%;
+    height:100%;
+    }
+    .container-velkommen{
+        flex-direction: column;
+    }
+ .velkommen-left{
+        width:100%;
+        margin-right:0;
+    }
+    .velkommen-content h2{
+        font-size: 40px;
+    }
+
+    .accessibility-content{
+        width:100%;
+        font-size:20px;
+        line-height: 40px;
+        padding:15px;
+        border-radius:10px;
+    }
+    .accessibility-content p{
+        width:100%;
+    }
+    .accessibility-bakgrunn{
+        background:none;
+        width:100%;
+    }
+    .heading-event{
+        font-size:30px;
+    }
+    .arrangement-book{
+        height:300px;
+    }
+}
+@media (max-width:520px){
+    .label-image-error{
+        width:100%;
+        border: 1px solid white;
+        margin: 0 auto;
+     }
+     .heading-alert{
+        width:100%;
+        border: 1px solid white;
+        margin: 0 auto;
+     }
+     .form-label-error{
+        width:100%;
+        margin: 0 auto;
+     }
+}
